@@ -6,14 +6,14 @@ The code is used for aligning and checking the alignment of two sequences where 
 
 
 
-The code is created for the following project:
+The code for the following project:
 "Protein coding sequences remains within lincRNAs". 
 Sweta Talyan, Miguel A.Andrade-Navarro, Enrique M.Muro. Manuscript in preparation.
 
 
 
 
-Prerequisites
+Requisites
 1.  String::LCSS_XS
 http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 2. Tested with version 1.007001 of BioPerl.
