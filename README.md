@@ -26,6 +26,7 @@ Run the following command to visualize the alignment
 perl aligner.pl ENSG00000177757 P0C7U9
 
 Follow the steps for alignment of protein coding sequences to lincRNA sequences
+
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
 perl predictionScript.pl data/LincRNASequences.fa data/ProteinSequences.fa >alignments.txt
 
