@@ -71,16 +71,13 @@ my @rank=();
 			}
 		}
 	}
-my @reversed = reverse @rank;
-	my $i=1;
-	foreach my $line (@reversed)
+
+	my @reversed = reverse @rank;
+	
+	if($reversed[0]=~m/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/)
 	{
-		if($line=~m/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/)
-		{
-		print $2,"\t".$3,"\t".$i."\t".$1."\t".$4."\t".$5."\t".$6."\t".$7."\t".$8."\t".$9."\t".$10."\n";
-		}
-	$i=$i+1;
+	print $2,"\t".$3,"\t1\t".$1."\t".$4."\t".$5."\t".$6."\t".$7."\t".$8."\t".$9."\t".$10."\n";
 	}
+	
 
 }
-
