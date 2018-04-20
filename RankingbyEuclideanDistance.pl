@@ -56,7 +56,7 @@ foreach my $line (@list)
 }
 my @TargetIds_unique = uniq @TargetIds;
 my @sorted_distancealignment = sort @distanceArray;
-print "Target\tQuery\tRank\tDistance\tAlignmentLength\tPercentIdentity\tMatch:Conserved:Semiconserved\tTargetStart\tTargetEnd\tQueryStart\tQueryEnd\n";
+print "Target\tQuery\tRank\tEuclDistance\tAlignmentLength\tPercentIdentity\tMatch:Conserved:Semiconserved\tTargetStart\tTargetEnd\tQueryStart\tQueryEnd\n";
 foreach my $l (@TargetIds_unique)
 {
 chomp $l;
@@ -72,11 +72,16 @@ my @rank=();
 		}
 	}
 
-	my @reversed = reverse @rank;
+	my @Ranking = reverse @rank;
 	
-	if($reversed[0]=~m/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/)
+	foreach my $line (@Ranking)
 	{
-	print $2,"\t".$3,"\t1\t".$1."\t".$4."\t".$5."\t".$6."\t".$7."\t".$8."\t".$9."\t".$10."\n";
+		my $i=1;
+		if($line=~m/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/)
+		{
+		print $2,"\t".$3,"\t".$i."\t".$1."\t".$4."\t".$5."\t".$6."\t".$7."\t".$8."\t".$9."\t".$10."\n";
+		$i=$i+1;
+		}
 	}
 	
 
