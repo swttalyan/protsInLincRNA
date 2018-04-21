@@ -25,9 +25,18 @@ http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 Follow the steps for alignment of protein coding sequences to lincRNA sequences.
 
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
-The code is taking approximately 10 hour to align 20,239 proteins sequences against 413 lincRNA sequences.
+The code take approximately time 30 seconds to align 20,239 proteins sequences against 1 lincRNA.
+The code is taking approximately 10 hour to align 20,239 proteins sequences against 413 lincRNAs.
+Tested with the following configurations:
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+CPU(s):                4
+Thread(s) per core:    2
+Model name:            Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz
+CPU MHz:               2762.648
 
-perl predictionScript.pl data/LincRNASequences.fa data/ProteinSequences.fa >alignments.txt
+
+perl predictionScript.pl data/413LincRNASequences.fa data/ProteinSequences.fa >alignments.txt
 
 Step2: Filtering of the alignment results using Rost-curve. This script will only print the alignments on command line which are above the curve and can be redirect to a new file which further can be used for Raning.
 
