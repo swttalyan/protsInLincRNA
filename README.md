@@ -45,7 +45,10 @@ grep -P "\t1\t" alignmentAboveRostCurvewithEuclDistance.txt| sort -k4,6n | sort 
 Command to run the program for the visualization of alignment of two sequences
 Download the reposiroty from github
 go to the directory Aligner 
+
 cd protsInLincRNA
+
 Run the following command to visualize the alignment
+
 perl aligner.pl ENSG00000177757 P0C7U9
 
