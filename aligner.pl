@@ -85,19 +85,19 @@ print FF $QuerySeq."\n";
 close FF;
 my $DNAfile="file.txt";
 
-open (ALN,">alignment.txt");
+open (ALN,">ALN.txt");
 
 
 my $unalSt_CC=0;
 my $unalSt_SWP=0;
 perfect_alignment ($SWP,$FRAME1,$FRAME2,$FRAME3,$minReadlen,$unalSt_CC,$unalSt_SWP);
 close (ALN);
-bigInsertionSkip("alignment.txt");
+bigInsertionSkip("ALN.txt");
 ntdindex();
 boundary_improvement($SWP,$FRAME1,$FRAME2,$FRAME3);
-printSequence ($SWP,$FRAME1,$FRAME2,$FRAME3,"alignment.txt",$printSeq,$printScore,$DNAPosition,$SWPPosition,$printDNASeq,$DNAfile,$AAtoDNA);
+printSequence ($SWP,$FRAME1,$FRAME2,$FRAME3,"ALN.txt",$printSeq,$printScore,$DNAPosition,$SWPPosition,$printDNASeq,$DNAfile,$AAtoDNA);
 
 
 unlink('file.txt') or die "Could not delete the file!\n";
-unlink('alignment.txt') or die "Could not delete the file!\n";
+unlink('ALN.txt') or die "Could not delete the file!\n";
 
