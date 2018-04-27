@@ -36,9 +36,9 @@ Step2: Euclidean distance from Rost-curve and Ranking of results. The script wil
 
 perl RankingbyEuclideanDistance.pl AlignmentOutput.txt >alignmentAboveRostCurvewithEuclDistance.txt
 
-To get only the rank 1 alignment per query sequences, below command can be used, where it will first select the rank one alignment and if there are two alignment for same query sequences then it will sort based on euclidean distance and alignment length.
+To get only the rank 1 alignment per query sequences, below command can be used:
 
-grep -P "\t1\t" alignmentAboveRostCurvewithEuclDistance.txt| sort -k4,6n | sort -k1,1 -u
+grep -P "\t1\t" alignmentAboveRostCurvewithEuclDistance.txt
 
 
 # Visualization platform
