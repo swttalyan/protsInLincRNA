@@ -52,7 +52,6 @@ use Predictioncode::perfectalignmentSimulExtension;
 use Predictioncode::bigInsertionSkip;
 use Predictioncode::conservedScore;
 use Predictioncode::SeqScore;
-use Predictioncode::Rostcurve;
 
 			######################
                         # Command line input #
@@ -96,13 +95,10 @@ for (my $i=0;$i<=$#Pseudogenes;$i=$i+2)
 		ntdindex("alignment.txt");
 		boundary_improvement($SWP,$FRAME1,$FRAME2,$FRAME3);	
 		masteroutputprocessing($Pseudogenes[$i],$SwissProt[$j],$DNASeq,$SWP,"alignment.txt");
-		Rostcurve("test.txt");
+		
 		
 	}
 }
 
 
-
 unlink('alignment.txt') or die "Could not delete the file!\n";
-
-unlink('test.txt') or die "Could not delete the file!\n";
