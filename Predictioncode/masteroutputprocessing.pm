@@ -26,7 +26,6 @@ sub masteroutputprocessing
 	);
 	##################### Substitution Matrix #########################	
 
-	open (FHH,">test.txt");
 	#open (FHH,">>Test_StepB.txt");
 	#print FHH "Pseudogene\tSwissProtPg\tLengthofAlignment\tNumberofPerfectMatch\tTimetoExecutetheProgram\n";
 	#print $Query."\t".$Target."\t".."\t";
@@ -147,18 +146,33 @@ sub masteroutputprocessing
 	my $swpEND=0; my $ccEND=0;
 	if ($alignments[-1]=~m/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/)
 	{
-	$swpEND=$2;
+		$swpEND=$2;
 	
-		if($5 eq 'F1'){$ccEND=(($4)*3);}
-		if($5 eq 'F2'){$ccEND=(($4)*3)+1;}
-		if($5 eq 'F3'){$ccEND=(($4)*3)+2;}
+			if($5 eq 'F1'){$ccEND=(($4)*3);}
+			if($5 eq 'F2'){$ccEND=(($4)*3)+1;}
+			if($5 eq 'F3'){$ccEND=(($4)*3)+2;}
 	
+		}
+		my $Length=$match+$gaps+$cons+$semicons+$mismatch;$score=sprintf "%.2f",$score;my $PID=sprintf "%.2f",$match/$Length*100;
+		$Query=~s/>//; $Target=~s/>//;
+		#print FHH $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
+		my $pid1=480*$Length**((-0.32)*(1+exp((-$Length)/1000)));
+		if($Length<=300)
+		{
+			if($PID >= $pid1)
+			{
+			print $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
+			}
+		}
+		else
+		{
+		my $PID_E=480*$Length**((-0.32)*(1+exp((-300)/1000)));
+			if($PID>=$PID_E)
+			{
+			print $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
+			}
+		}
+		#print FHH $Length."\t".$match."\t".$cons."\t".$semicons."\t".$mismatch."\t".$gaps."\t".$score."\t";
 	}
-	my $Length=$match+$gaps+$cons+$semicons+$mismatch;$score=sprintf "%.2f",$score;my $PID=sprintf "%.2f",$match/$Length*100;
-	$Query=~s/>//; $Target=~s/>//;
-	print FHH $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
-	#print FHH $Length."\t".$match."\t".$cons."\t".$semicons."\t".$mismatch."\t".$gaps."\t".$score."\t";
-	}
-close FHH;
 }
 1;
