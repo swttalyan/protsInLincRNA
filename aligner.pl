@@ -53,7 +53,7 @@ print "Usage of Program: perl mainprogram.pl LincRNAID ProteinID\n";
 exit;
 }
 
-#perl mainprogram.pl ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635.fa 4 1 1 1 1 1 ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635_DNAseq.fa 1 1
+#perl aligner.pl ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635.fa 4 1 1 1 1 1 ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635_DNAseq.fa 1 1
 
 
 ### command line inputs ###############
