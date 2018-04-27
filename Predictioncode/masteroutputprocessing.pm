@@ -26,7 +26,7 @@ sub masteroutputprocessing
 	);
 	##################### Substitution Matrix #########################	
 
-	
+	open (FHH,">test.txt");
 	#open (FHH,">>Test_StepB.txt");
 	#print FHH "Pseudogene\tSwissProtPg\tLengthofAlignment\tNumberofPerfectMatch\tTimetoExecutetheProgram\n";
 	#print $Query."\t".$Target."\t".."\t";
@@ -156,9 +156,9 @@ sub masteroutputprocessing
 	}
 	my $Length=$match+$gaps+$cons+$semicons+$mismatch;$score=sprintf "%.2f",$score;my $PID=sprintf "%.2f",$match/$Length*100;
 	$Query=~s/>//; $Target=~s/>//;
-	print $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
+	print FHH $Query."\t".$Target."\t".$Length."\t".$PID."\t".$match.":".$cons.":".$semicons."\t".$ccSTART."\t".$ccEND."\t".$swpSTART."\t".$swpEND."\n";
 	#print FHH $Length."\t".$match."\t".$cons."\t".$semicons."\t".$mismatch."\t".$gaps."\t".$score."\t";
 	}
-
+close FHH;
 }
 1;
