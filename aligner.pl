@@ -49,12 +49,9 @@ use code::ntdIndexFixing;
 my $num_args=$#ARGV+1;
 if($num_args !=2)
 {
-print "Usage of Program: perl mainprogram.pl LincRNAID ProteinID\n";
+print "Usage of Program: perl aligner.pl LincRNAID ProteinID\n";
 exit;
 }
-
-#perl aligner.pl ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635.fa 4 1 1 1 1 1 ../../../../DataFetchingCallingBstep/32ExampleslongFiles_New/P02792_ENST00000402635_DNAseq.fa 1 1
-
 
 ### command line inputs ###############
 
