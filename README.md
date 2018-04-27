@@ -32,7 +32,7 @@ This script will align all the query sequences against database/template sequenc
 
 perl predictionScript.pl data/LincRNATestSequences.fa data/ProteinSequences.fa >AlignmentOutput.txt
 
-Step3: Euclidean distance from Rost-curve and Ranking of results. The script will print the ranked alignments based on euclidean distance for lincRNA sequences on the command line please redirect these alignments in a file for further analysis.
+Step2: Euclidean distance from Rost-curve and Ranking of results. The script will print the ranked alignments based on euclidean distance for lincRNA sequences on the command line please redirect these alignments in a file for further analysis.
 
 perl RankingbyEuclideanDistance.pl AlignmentOutput.txt >alignmentAboveRostCurvewithEuclDistance.txt
 
