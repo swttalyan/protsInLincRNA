@@ -23,12 +23,14 @@ http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 # Proteins Sequence remnants within lincRNA detection
 
 Follow the steps for alignment of protein coding sequences to lincRNA sequences.
+Download the reposiroty from github
+go to the directory protsInLincRNA 
 
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
 
 
 
-perl predictionScript.pl data/413LincRNASequences.fa data/ProteinSequences.fa >alignments.txt
+perl predictionScript.pl data/LincRNATestSequences.fa data/ProteinSequences.fa >alignments.txt
 
 Step2: Filtering of the alignment results using Rost-curve. This script will only print the alignments on command line which are above the curve and can be redirect to a new file which further can be used for Raning.
 
@@ -43,9 +45,7 @@ grep -P "\t1\t" alignmentAboveRostCurvewithEuclDistance.txt| sort -k4,6n | sort 
 
 
 # Visualization platform
-Command to run the program for the visualization of alignment of two sequences
-Download the reposiroty from github
-go to the directory Aligner 
+Command to run the program for the visualization of alignment of two sequences.
 
 cd protsInLincRNA
 
