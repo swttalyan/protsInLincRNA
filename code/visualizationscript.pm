@@ -1,4 +1,4 @@
-Queryuse warnings;
+use warnings;
 package main;
 use Term::ANSIColor;
 no warnings 'uninitialized';
