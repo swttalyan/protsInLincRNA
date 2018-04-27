@@ -103,4 +103,6 @@ for (my $i=0;$i<=$#Pseudogenes;$i=$i+2)
 
 
 
-#unlink('alignment.txt') or die "Could not delete the file!\n";
+unlink('alignment.txt') or die "Could not delete the file!\n";
+
+unlink('test.txt') or die "Could not delete the file!\n";
