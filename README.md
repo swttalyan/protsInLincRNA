@@ -24,7 +24,7 @@ http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 
 Follow the steps for alignment of protein coding sequences to lincRNA sequences.
 Download the reposiroty from github
-go to the directory protsInLincRNA 
+go to the directory protsInLincRNA-master 
 
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
 
