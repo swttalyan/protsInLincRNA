@@ -3,8 +3,7 @@
 Code for the alignment of protein-coding genes against lincRNA genes.
 
 
-The code is used for aligning and checking the alignment of two sequences where the query is protein-coding genes sequences (amino acid) and target is non-coding gene sequences (DNA). This code uses a new scoring matrix which is created by simulating punctual mutations according to the neutral theory of molecular evolution between human and chimpanzees. The alignment of the target and query sequences is shown on the consol in three different sections Top: Alignment of the protein sequence against the three frame of lincRNA gene sequences. Middle: The protein sequence is aligned against the three translated frames. Bottom: Alignment of the protein sequence to the non-coding DNA sequence.
-
+The code is used for aligning and checking the alignment of two sequences where query is protein-coding gene sequences (amino acid) and target is non-coding gene sequences (DNA). This code uses a new scoring matrix which is created by simulating punctual mutations according to the neutral theory of molecular evolution between human and chimpanzees. There are two scripts under this code: First: Prediction Program (To detect the remnants of protein coding genes sequences inside non-coding RNAs) and Second: Visualization platform (To check the alignment of two sequences).
 
 
 The code for the following project:
@@ -22,20 +21,18 @@ http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 
 # Proteins Sequence remnants within lincRNA detection
 
-Follow the steps for alignment of protein coding sequences to lincRNA sequences.
-Download the reposiroty from github
+Follow the steps for alignment of protein-coding sequences to lincRNA sequences.
+
+DDownload the repository from github
 go to the directory protsInLincRNA-master 
 
-Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
-
-NOTE: This code take approximately 5 minutes for the alignment of sequences from above two files provded as data files.
-
-This script will align all the query sequences against database/template sequences,and report only those alignments which are above rost curve in the file name "AlignmentOutput.txt" in the following format: "Target	Query	AlignmentLength	PercentIdentity	Match:Conserved:Semiconserved	TargetStart	TargetEnd	QueryStart	QueryEnd". 
+Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences (DNA) file and second sequences is proteins (amino acid). This script will align all the query sequences against database/template sequences,and report only those alignments which are above rost curve in the file name "AlignmentOutput.txt" in the following format: "Target	Query	AlignmentLength	PercentIdentity	Match:Conserved:Semiconserved	TargetStart	TargetEnd	QueryStart	QueryEnd". This script can take longer time depending upon the number of sequences to be aligned.
 
 perl predictionScript.pl data/LincRNATestSequences.fa data/ProteinSequences.fa >AlignmentOutput.txt
 
+NOTE: This script take approximately 5 minutes for aligning LincRNATestSequences.fa and ProteinSequences.fa (provided as data).
 
-Step2: Euclidean distance from Rost-curve and Ranking of results. The script will print the ranked alignments based on euclidean distance for lincRNA sequences on the command line please redirect these alignments in a file for further analysis.
+Step2: Euclidean distance from Rost-curve and Ranking of results. The script will print the ranked alignments based on euclidean distance on the command line and out put is stored in "alignmentAboveRostCurvewithEuclDistance.txt" for further analysis.
 
 perl RankingbyEuclideanDistance.pl AlignmentOutput.txt >alignmentAboveRostCurvewithEuclDistance.txt
 
@@ -46,8 +43,8 @@ grep -P "\t1\t" alignmentAboveRostCurvewithEuclDistance.txt
 
 # Visualization platform
 
-The visualization is divided into three main sections. First, the protein sequence against the three-frame-translated lincRNA sequence; highlighted colors are used for the different translated frames and scores of each alignment is represented as AlignmentScore:AlignmentLength:Ratio(AlignmentScore/AlignmentLength). Second, the protein sequence against the three different ORFs of the three translated lincRNA sequences; one alignment for each frame. Third, Alignment of the protein sequence against the lincRNA DNA sequence, where the divergence can be observed with a resolution of one nt.
-The alignments are highlighted with three different colors: red, green and blue for frames 1, 2 and 3, respectively. Furthermore, standard symbols have been used to represent the alignment quality: “|” for identity, “:” for conserved (probability value ≥ 0.2) and “.” for semi-conserved (probability < 0.2). Note that here, conservation is defined by the probability of amino acid substitutions we calculated above.
+The second part of the code is visualization of alignment. This visualization platform is divided into three main sections. First, the protein sequence against the three-frame-translated lincRNA sequence; highlighted colors are used for the different translated frames and scores of each alignment is represented as AlignmentScore : AlignmentLength : Ratio(AlignmentScore/AlignmentLength). Second, the protein sequence against the three different ORFs of the translated lincRNA sequences; one alignment for each frame. Third, Alignment of the protein sequence against the lincRNA DNA sequence, where the divergence can be observed with a resolution of one nt.
+The alignments are highlighted with three different colors: red, green and blue for frames 1, 2 and 3, respectively. Furthermore, standard symbols have been used to represent the alignment quality: “|” for identity, “:” for conserved  and “.” for semi-conserved. 
 
 Command to run the program for the visualization of alignment of two sequences.
 
