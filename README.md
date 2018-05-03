@@ -28,7 +28,7 @@ go to the directory protsInLincRNA-master
 
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences file and second sequences is proteins. The program will print the output on the command line redirect the output in a file and wait until the code finish this script can take longer time depending upon the number of sequences to be aligned.
 
-NOTE: This code take approximately 5 minutes for the alignment of sequences from above two files on 
+NOTE: This code take approximately 5 minutes for the alignment of sequences from above two files provded as data files.
 
 This script will align all the query sequences against database/template sequences,and report only those alignments which are above rost curve in the file name "AlignmentOutput.txt" in the following format: "Target	Query	AlignmentLength	PercentIdentity	Match:Conserved:Semiconserved	TargetStart	TargetEnd	QueryStart	QueryEnd". 
 
