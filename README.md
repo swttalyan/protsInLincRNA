@@ -1,7 +1,6 @@
-# Sequence remnants within lincRNA detection and Visualization platform
+# Protein sequence remnants within lincRNAs (Detection and Visualization platform)
 
 Code for the alignment of protein-coding genes against lincRNA genes.
-
 
 The code is used for aligning and checking the alignment of two sequences where query is protein-coding gene sequences (amino acid) and target is non-coding gene sequences (DNA). This code uses a new scoring matrix which is created by simulating punctual mutations according to the neutral theory of molecular evolution between human and chimpanzees. There are two scripts under this code: First: Prediction Program (To detect the remnants of protein coding genes sequences inside non-coding RNAs) and Second: Visualization platform (To check the alignment of two sequences).
 
@@ -15,8 +14,6 @@ Sweta Talyan, Miguel A.Andrade-Navarro, Enrique M.Muro. Manuscript Submitted.
 1.  String::LCSS_XS
 http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 2. Tested with version 1.007001 of BioPerl.
-
-
 
 
 # Proteins Sequence remnants within lincRNA detection
