@@ -20,7 +20,7 @@ http://search.cpan.org/~limaone/String-LCSS_XS-1.2/lib/String/LCSS_XS.pm
 
 Follow the steps for alignment of protein-coding sequences to lincRNA sequences.
 
-DDownload the repository from github
+Download the repository from github
 go to the directory protsInLincRNA-master 
 
 Step1: Run the prediction script by providing two multisequences fasta file FirstFile is LincRNA sequences (DNA) file and second sequences is proteins (amino acid). This script will align all the query sequences against database/template sequences,and report only those alignments which are above rost curve in the file name "AlignmentOutput.txt" in the following format: "Target	Query	AlignmentLength	PercentIdentity	Match:Conserved:Semiconserved	TargetStart	TargetEnd	QueryStart	QueryEnd". This script can take longer time depending upon the number of sequences to be aligned.
