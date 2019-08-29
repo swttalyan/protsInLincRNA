@@ -7,7 +7,9 @@ The code is used for aligning and checking the alignment of two sequences where 
 
 The code for the following project:
 "Identification of transcribed protein coding sequence remnants within lincRNAs"
-Sweta Talyan, Miguel A.Andrade-Navarro, Enrique M.Muro. Manuscript Submitted.
+Sweta Talyan, Miguel A.Andrade-Navarro, Enrique M.Muro.
+https://academic.oup.com/nar/article/46/17/8720/5050642
+
 
 
  Requisites
