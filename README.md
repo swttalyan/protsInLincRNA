@@ -49,3 +49,7 @@ Command to run the program for the visualization of alignment of two sequences.
 
 perl aligner.pl ENSG00000177757 P0C7U9
 
+or 
+
+perl -I /pathforthisGitDirectory/protsInLincRNA-master/ aligner.pl ENSG00000177757 P0C7U9
+
